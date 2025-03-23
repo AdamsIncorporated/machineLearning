@@ -1,20 +1,36 @@
-#ifndef __DATA_H
-#define __DATA_H
-
-#include <fstream>
-#include "stdint.h"
 #include "data.hpp"
-#include <vector>
-#include <string>
-#include <map>
-#include <unordered_set>
 
-class data_handler
+void data::set_feature_vector(std::vector<uint8_t> *vect)
 {
-    std::vector<data *> *data_array;
-    std::vector<data *> *training_data;
-    std::vector<data *> *training_data;
-    std::vector<data *> *training_data;
+    feature_vector = vect;
+};
+void data::append_to_feature_vector(uint8_t val)
+{
+    feature_vector->push_back(val);
+};
+void data::set_label(uint8_t val)
+{
+    label = val;
+};
+void data::set_enumerated_label(int val)
+{
+    enum_label = val;
 };
 
-#endif
+int data::get_feature_vector_size()
+{
+    return feature_vector->size();
+};
+uint8_t data::get_label()
+{
+    return label;
+};
+uint8_t data::set_enumerated_label()
+{
+    return enum_label;
+};
+
+std::vector<uint8_t> *data::get_feature_vector()
+{
+    return feature_vector;
+};
