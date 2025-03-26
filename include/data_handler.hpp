@@ -12,9 +12,9 @@
 class data_handler
 {
     std::vector<data *> *data_array;
+    std::vector<data *> *test_data;
     std::vector<data *> *training_data;
-    std::vector<data *> *training_data;
-    std::vector<data *> *training_data;
+    std::vector<data *> *validation_data;
 
     int num_classes;
     int feature_vector_size;
